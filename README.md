@@ -10,7 +10,9 @@ go install -v github.com/musana/xup@latest
 **to extract ip:port pair** 
 
 ```
-masscan 1.1.1.1/28 -p 80|xup
+masscan 1.1.1.1/28 -p 80|xup masscan
+or you can pass xml format of nmap output
+cat nmap_scan.xml|xup nmap
 
 output:
 1.1.1.10:80
@@ -25,7 +27,9 @@ output:
 **to extract only IP** 
 
 ```
-masscan 1.1.1.1/28 -p 80|xup -onlyip
+masscan 1.1.1.1/28 -p 80|xup masscan -onlyip
+or you can pass xml format of nmap output
+cat nmap_scan.xml|xup nmap -onlyip
 
 output:
 1.1.1.10
